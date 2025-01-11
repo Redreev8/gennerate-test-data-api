@@ -38,27 +38,10 @@ export const generateData = (shema: Shema['shema']) => {
 }
 
 const generateDateArray = (date: Shema) => {
-    const { shema, count, paggint } = date
-    const result: any[] = Array.from(
-        {
-            length: paggint ? Math.ceil(count / paggint) : 0,
-        },
-        () => [],
-    )
-    let indexResilt = 0
-    let index = 0
+    const { shema, count } = date
+    const result: any[] = []
     for (let i = 0; i < count; i++) {
-        const obj = generateData(shema)
-        if (paggint > 0) {
-            if (indexResilt >= paggint) {
-                indexResilt = 0
-                index++
-            }
-            result[index].push(obj)
-            indexResilt++
-            continue
-        }
-        result.push(obj)
+        result.push(generateData(shema))
     }
     return result
 }
