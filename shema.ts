@@ -7,7 +7,7 @@ import word from './genarate-data/generate-func/word'
 
 export default () => {
     generateDate({
-        name: 'sfdadfsaf',
+        name: 'article',
         shema: {
             id: () => uid(),
             title: () => word(10),
@@ -19,13 +19,12 @@ export default () => {
                 name: () => word(10),
             },
         },
+        key: 'id',
         count: 20,
         paggint: 4,
     })
     generateDate({
         name: 'uid',
         shema: () => uid(),
-        count: 20,
-        paggint: 4,
     })
 }
