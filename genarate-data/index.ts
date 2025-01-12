@@ -29,9 +29,9 @@ const generate = async (shema: Shema) => {
 
     process.files[shema.name] = shema
     const nameResetArgv = resetArgv ? resetArgv.split(shema.name)[0] : ''
-    if (!isCreate && (nameResetArgv === 'r=' || nameResetArgv === 'reset='))
+    if (!isCreate && !(nameResetArgv === 'r=' || nameResetArgv === 'reset='))
         return
-
+    console.log('m5tlvfcnwbscp7ro6u')
     const data =
         typeof shema.shema === 'object' && shema.count > 1
             ? generateDateArray(shema)

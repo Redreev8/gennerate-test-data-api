@@ -15,6 +15,7 @@ export interface Shema {
         | number
         | boolean
         | any[]
+    key?: string
     count?: number
     paggint?: number
 }
